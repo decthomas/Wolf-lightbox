@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Wolf Lightbox: simple jQuery lightbox</title>
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/modal.css" type="text/css" media="screen" />
+	<style type="text/css" media="screen">
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 13px;
+			line-height: 1.5;
+		}
+		
+		#container {
+			padding: 20px;
+			margin: 0 auto;
+			width: 800px;
+		}
+		
+		pre, code {
+			font-size: 11px;
+		}
+		
+		pre {
+			margin: 10px 0;
+		}
+
+		h3 {
+			font-size: 24px;
+			margin: 0 0 24px;
+		}
+		
+		ul {
+			list-style: disc;
+			padding: 0 0 12px 24px;
+		}
+		
+		h4 {
+			font-size: 16px;
+		}
+		
+		p, h4 {
+			padding: 0 0 12px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="container">
+		<h3>Simple jQuery lightbox</h3>
+
+		<p>Why do all lightboxes out there use a gazillion images and options when all I want is to show a larger image when I click a small one?</p>
+
+		<p><strong>Features:</strong> keyboard close with Esc or X button; automatically centers in all browsers; easy to add, just add a <code>class="lightbox"</code> to a linked image</p>
+
+		<h4>Browser support</h4>
+		<p>Tested in IE6, IE7, IE8, IE9, Opera 10+, FF3.5+, Safari 5, Chrome 6</p>
+
+		<h4>Files</h4>
+
+		<ul>
+			<li><code>reset.css</code> includes a CSS reset; you'll probably already use one in your project.</li>
+			<li><code>modal.css</code> includes CSS to make the modal look a bit nicer, but this CSS is not required. Ignore the file and roll your own</li>
+			<li><code>modal.js</code> &amp; <code>modal.min.js</code>: the script itself</li>
+			<li><code>buttons_close.png</code> button image; the only image used</li>
+		</ul>
+
+		<h4>Usage</h4>
+
+		<ul>
+			<li>
+				Paste the following HTML close to the end of the &lt;body&gt; tag (ideally this should be the last code before the end):
+				
+<pre>&lt;div class=&quot;modal&quot; style=&quot;display: none;&quot;&gt;
+	&lt;div class=&quot;mContent&quot;&gt;
+		&lt;a href=&quot;#&quot; class=&quot;buttonClose&quot; title=&quot;Close this window&quot;&gt;&lt;strong&gt;Close&lt;/strong&gt; (X)&lt;/a&gt;
+		&lt;div class=&quot;figure&quot;&gt;
+			&lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;
+		&lt;/div&gt;
+		&lt;p class=&quot;caption&quot;&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;modalOverlay&quot; style=&quot;display: none;&quot;&gt;&amp;nbsp;&lt;/div&gt;</pre>
+			<li>Link a small image to a big image: <code>&lt;a href=&quot;image_big.jpg&quot;&gt;&lt;img src=&quot;image_small.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;</code></li>
+			<li>Add a <code>class="lightbox"</code> to the &lt;a&gt;</li>
+			<li>Optional: Add alt text to the &lt;img&gt; for the caption</li>
+		</ul>
+
+		<h4>Download</h4>
+
+		<p>Download from Github</p>
+
+		<h4>Demo</h4>
+
+		<p>Click this image:</p>
+
+		<p><a href="image_big.jpg" class="lightbox"><img src="image_small.jpg" alt="My Triumph typewriter" alt="" /></a></p>
+
+		<h4>Credits</h4>
+
+		<ul>
+			<li>Original javascript: <a href="http://sumocoders.be/">Tijs Verkoyen</a></li>
+			<li>Modifications, JS rewrite and styling: <a href="http://www.wolfslittlestore.be">Johan Ronsse</a></li>
+		</ul>
+
+	</div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
+
+	<div class="modal" style="display: none;">
+		<div class="mContent">
+			<a href="#" class="buttonClose" title="Close this window"><strong>Close</strong> (X)</a>
+			<div class="figure">
+				<img src="" alt="" />
+			</div>
+			<p class="caption"></p>
+		</div>
+	</div>
+	<div id="modalOverlay" style="display: none;">&nbsp;</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+/*
+	Close button
+*/
+
+.buttonClose:link,
+.buttonClose:visited {
+
+	background: url(../images/buttons_close.png);
+	width: 27px;
+	height: 27px;
+
+	display: block;
+	border: none;
+	text-indent: -9000px;
+}
+
+.buttonClose:hover,
+.buttonClose:active,
+.buttonClose:focus {
+	background: url(../images/buttons_close.png) 0 -27px;
+}
+
+/*
+	Modal box pattern
+	Requirements:
+		* no padding or margin on body, html
+		* use CSS reset
+*/
+
+/*
+	If this is defined elsewhere,
+	feel free to remove it:
+*/
+
+html, body {
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+#modalOverlay {
+	z-index: 1000;
+
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+
+	background: #7C92A7;
+	background: -webkit-gradient(linear, left top, left bottom, from(#79A9D8), to(#7C92A7));
+
+	/* @inc opacity */
+	opacity: 0.33;
+	filter: alpha(opacity=33);
+	-ms-filter: "alpha(opacity=33)";
+	-khtml-opacity: 0.33;
+	-moz-opacity: 0.33;
+}
+
+/*
+	Modal itself
+*/
+
+.modal {
+	z-index: 1200;
+	margin: 0 auto;
+	width: 620px;
+}
+
+.modal .mContent {
+	position: relative;
+	margin: 0; /* Don't remove this, IE bugfix */
+}
+
+.modal .buttonClose {
+	position: absolute;
+	right: -12px;
+	top: -12px;
+}
+
+.modal .mContent {
+	background: #FFF;
+	min-width: 620px;
+	min-height: 480px;
+	position: relative;
+	margin: 0 auto;
+
+	/* @inc .boxShadow */
+	-webkit-box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
+	-moz-box-shadow: rgba(0,0,0,0.25) 3px 3px 12px;
+	box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
+}
+
+	.mContent .figure {
+		text-align: center;
+		line-height: 0;
+	}
+	
+		.mContent .figure img {
+			max-width: 620px;
+			max-height: 480px;
+			display: block;
+			margin: 0 auto;
+		}
+
+	.mContent .caption {
+		text-align: center;
+		padding: 6px 12px;
+		margin: 0;
+		color: #FFF;
+		background: #5D6064;
+		font-weight: 700;
+		zoom: 1;
+	}
