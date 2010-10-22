@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+	var modalHTML = '<div class="modal" style="display: none;"><div class="mContent"><a href="#" class="buttonClose" title="Close this window"><strong>Close</strong> (X)</a><div class="figure"><img src="" alt="" /></div><p class="caption"></p></div></div><div id="modalOverlay" style="display: none\;">&nbsp\;</div>';
+	$('body').append(modalHTML);
+
 	// When clicking on an <a> with class lightbox
 	$('a.lightbox').click(function(evt)
 	{
@@ -25,8 +28,6 @@ $(document).ready(function() {
 
 function showBox() {
 
-	$('body').addClass('modalShowing');
-
 	// IE6/7/8 does not correctly support opacity
 	if (jQuery.browser.msie) {
 
@@ -36,8 +37,8 @@ function showBox() {
 		// IE bugfixes
 		if($.browser.msie && $.browser.version =='6.0') {
 			// Persistent overlay opacity for IE6
-			// Make sure modalOverlay has full height
-			$('#modalOverlay').css("filter", "alpha(opacity=33)").css('height', $(document).height());
+			// Make sure modalOverlay has full body height
+			$('#modalOverlay').css("filter", "alpha(opacity=33)").css('height', $('body').height());
 		}
 
 	} else {
@@ -68,8 +69,7 @@ function closeBox() {
 
 	// Too much bugs with alpha/opacity, so IE6 gets a simple hide()
 	if (jQuery.browser.msie) {
-		$('.modal').hide();
-		$('#modalOverlay').hide();
+		$('#modalOverlay, .modal').hide();
 	} else {
 		// Hide modal and overlay
 		$('#modalOverlay, .modal').fadeOut("fast");
@@ -78,7 +78,6 @@ function closeBox() {
 }
 
 function positionBox() {
-	// Centers the modal
 
 	// initialize object references
 	var oElement = $('.modal');
@@ -97,9 +96,10 @@ function positionBox() {
 			.css('height', modalHeight)
 			.css('position', 'fixed');
 
-	// only IE6 should use absolute
+	// IE6 should use position: absolute; since fixed is not supported
 	if($.browser.msie && $.browser.version =='6.0') {
 		oElement.css('position', 'absolute')
-		        .css('top', parseInt(offsetTop + $(window).scrollTop()));
+		        .css('top', offsetTop + oWindow.scrollTop());
 	}
+
 }

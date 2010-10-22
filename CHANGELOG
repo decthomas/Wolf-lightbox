@@ -1,7 +1,16 @@
+# 1.02
+
+* Optimized PNG close button
+* Added .gif close button for IE6
+* Removed minified JS since it's a bitch to maintain
+* The HTML gets inserted with JS now, making implementation easier
+* Validated demo HTML
+* Changed file names to include project name for easier recognition
+
 # 1.01
 
-Added link to Github and online demo.
+* Added link to Github and online demo.
 
 # 1.0
 
-Initial version
+* Initial version

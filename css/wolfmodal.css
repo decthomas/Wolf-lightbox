@@ -1,26 +1,4 @@
 /*
-	Close button
-*/
-
-.buttonClose:link,
-.buttonClose:visited {
-
-	background: url(../images/buttons_close.png);
-	width: 27px;
-	height: 27px;
-
-	display: block;
-	border: none;
-	text-indent: -9000px;
-}
-
-.buttonClose:hover,
-.buttonClose:active,
-.buttonClose:focus {
-	background: url(../images/buttons_close.png) 0 -27px;
-}
-
-/*
 	Modal box pattern
 	Requirements:
 		* no padding or margin on body, html
@@ -115,3 +93,26 @@ html, body {
 		font-weight: 700;
 		zoom: 1;
 	}
+
+/*
+	Close button
+*/
+
+.buttonClose:link,
+.buttonClose:visited {
+
+	background: url(../images/button_close.png);
+	_background: url(../images/button_close.gif);
+	width: 27px;
+	height: 27px;
+
+	display: block;
+	border: none;
+	text-indent: -9000px;
+}
+
+.buttonClose:hover,
+.buttonClose:active,
+.buttonClose:focus {
+	background-position: 0 -27px;
+}
