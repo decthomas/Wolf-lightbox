@@ -1,3 +1,9 @@
+# 1.03
+
+* Fixed IE6 positioning bug by adding a shim (offscreen element) to get the image dimensions
+* All images get preloaded now to avoid cache problems
+* Better styles for caption
+
 # 1.02
 
 * Optimized PNG close button

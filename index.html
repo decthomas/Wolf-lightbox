@@ -8,15 +8,21 @@
 	<link rel="stylesheet" href="css/wolfmodal.css" type="text/css" media="screen" />
 	<style type="text/css" media="screen">
 		body {
-			font-family: Arial, sans-serif;
-			font-size: 13px;
+			font-family: Georgia, Arial, sans-serif;
+			font-size: 14px;
 			line-height: 1.5;
+			color: #656565;
 		}
-		
+
+		h1, h2, h3, h4 {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color: #333;
+		}
+
 		#container {
 			padding: 20px;
 			margin: 0 auto;
-			width: 800px;
+			width: 600px;
 		}
 		
 		pre, code {
@@ -28,7 +34,9 @@
 		}
 
 		h3 {
-			font-size: 24px;
+			color: #000;
+			font-size: 36px;
+			letter-spacing: -1px;
 			margin: 0 0 24px;
 		}
 		
@@ -44,6 +52,35 @@
 		p, h4 {
 			padding: 0 0 12px;
 		}
+
+		.caption {
+			font-family: Arial;
+			font-size: 11px;
+		}
+		
+		.imageList {
+			padding: 0 0 12px;
+			list-style: none;
+			zoom: 1;
+		}
+
+			.imageList:after {
+				content: ".";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+
+		.imageList li {
+			float: left;
+			margin: 0 1px 0 0;
+		}
+
+			.imageList a,
+			.imageList img {
+				display: block;
+			}
 	</style>
 </head>
 <body>
@@ -55,11 +92,18 @@
 
 		<p><strong>Features:</strong> keyboard close with Esc or X button; automatically centers in all browsers; easy to add, just add a <code>class="lightbox"</code> to a linked image</p>
 
-		<h4>Browser support</h4>
-		<p>Tested in IE7, IE8, IE9, Opera 10+, FF3.5+, Safari 5, Chrome 6</p>
+		<h4>Demo</h4>
 
-		<h4>Browser support in development</h4>
-		<p>IE6: bug remaining: positioning only works the second time</p>
+		<p>Click an image:</p>
+
+		<ul class="imageList">
+			<li><a href="image_big.jpg" class="lightbox"><img src="image_small.jpg" alt="My Triumph typewriter" /></a></li>
+			<li><a href="image2_big.jpg" class="lightbox"><img src="image2_small.jpg" alt="My succulent plant in one of it's better days" /></a></li>
+			<li><a href="image3_big.jpg" class="lightbox"><img src="image3_small.jpg" alt="The Atlantic" /></a></li>
+		</ul>
+
+		<h4>Browser support</h4>
+		<p>Tested in IE6-9, Opera 10+, FF3.5+, Safari 5, Chrome 6</p>
 
 		<h4>Files</h4>
 
@@ -67,7 +111,7 @@
 			<li><code>reset.css</code> includes a CSS reset; you'll probably already use one in your project.</li>
 			<li><code>wolfmodal.css</code> includes CSS to make the modal look nice, but this CSS is not required. You can ignore the file and roll your own</li>
 			<li><code>jquery.wolfmodal.js</code>: the script itself</li>
-			<li><code>buttons_close.png</code> button image; the only image used</li>
+			<li><code>button_close.png</code> button image; the only image used (.gif for IE6)</li>
 		</ul>
 
 		<h4>Usage</h4>
@@ -83,13 +127,16 @@
 
 		<p>Download from Github: <code>git clone git@github.com:Wolfr/Wolf-lightbox.git</code> or visit <a href="http://github.com/Wolfr/Wolf-lightbox">the repository</a></p>
 
-		<h4>Demo</h4>
+		<h4>Todo</h4>
 
-		<p>Click this image:</p>
-
-		<p><a href="image_big.jpg" class="lightbox"><img src="image_small.jpg" alt="My Triumph typewriter" /></a></p>
+		<ul>
+			<li>If an image does not get loaded, provide fallback/loading state</li>
+			<li>To test/Check: embed, object or selects in the background in IE</li>
+		</ul>
 
 		<h4>Credits</h4>
+
+		<p>License: BSD, details see file called LICENSE</p>
 
 		<ul>
 			<li>Original javascript: <a href="http://sumocoders.be/">Tijs Verkoyen</a></li>

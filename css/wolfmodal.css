@@ -45,12 +45,7 @@ html, body {
 .modal {
 	z-index: 1200;
 	margin: 0 auto;
-	width: 620px;
-}
-
-.modal .mContent {
 	position: relative;
-	margin: 0; /* Don't remove this, IE bugfix */
 }
 
 .modal .buttonClose {
@@ -61,10 +56,12 @@ html, body {
 
 .modal .mContent {
 	background: #FFF;
-	min-width: 620px;
-	min-height: 480px;
+	margin: 0; /* Don't remove this, IE bugfix */
 	position: relative;
+	_display: inline;
 	margin: 0 auto;
+
+	text-align: center;
 
 	/* @inc .boxShadow */
 	-webkit-box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
@@ -72,26 +69,27 @@ html, body {
 	box-shadow: 3px 3px 12px rgba(0,0,0,0.25);
 }
 
-	.mContent .figure {
-		text-align: center;
-		line-height: 0;
+	.mContent img {
+		display: block;
+		margin: 0 auto;
 	}
-	
-		.mContent .figure img {
-			max-width: 620px;
-			max-height: 480px;
-			display: block;
-			margin: 0 auto;
-		}
 
 	.mContent .caption {
-		text-align: center;
 		padding: 6px 12px;
+		position: absolute;
+		bottom: 6px;
+		left: 6px;
 		margin: 0;
 		color: #FFF;
-		background: #5D6064;
+		background: #000;
+		background: rgba(0,0,0,0.4);
 		font-weight: 700;
 		zoom: 1;
+		
+		/* @inc .rc */
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
 	}
 
 /*
@@ -115,4 +113,14 @@ html, body {
 .buttonClose:active,
 .buttonClose:focus {
 	background-position: 0 -27px;
+}
+
+/*
+	Shim
+*/
+
+.imageShim, #imageShim {
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
 }
